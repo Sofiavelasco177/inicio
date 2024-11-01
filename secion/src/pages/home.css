@@ -1,0 +1,25 @@
+/* src/pages/Home.css */
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #282c34;
+    text-align: center;
+  }
+  
+  .home-title {
+    font-size: 3rem;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .home-subtitle {
+    font-size: 1.5rem;
+    color: #61dafb;
+    max-width: 80%;
+  }
+  
