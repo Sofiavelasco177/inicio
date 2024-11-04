@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../redux/authslice"; // Simularemos que el usuario está autenticado tras el registro
+import { login } from "../redux/authslice";
 import { useNavigate } from 'react-router-dom';
-
+import './Register.css';
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -10,8 +10,6 @@ function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,17 +19,16 @@ function Register() {
       return;
     }
 
-   
     dispatch(login());  
     navigate('/Home'); 
   };
 
   return (
-    <div>
-      <h2>Registro</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email:
+   
+      <div className="register-form">
+        <h2>Registro</h2>
+        <form onSubmit={handleSubmit}>
+          <label>Email:</label>
           <input
             type="email"
             value={email}
@@ -39,10 +36,7 @@ function Register() {
             placeholder="Correo electrónico"
             required
           />
-        </label>
-        <br />
-        <label>
-          Contraseña:
+          <label>Contraseña:</label>
           <input
             type="password"
             value={password}
@@ -50,10 +44,7 @@ function Register() {
             placeholder="Contraseña"
             required
           />
-        </label>
-        <br />
-        <label>
-          Confirmar Contraseña:
+          <label>Confirmar Contraseña:</label>
           <input
             type="password"
             value={confirmPassword}
@@ -61,11 +52,10 @@ function Register() {
             placeholder="Confirmar Contraseña"
             required
           />
-        </label>
-        <br />
-        <button type="submit">Registrarse</button>
-      </form>
-    </div>
+          <button type="submit">Registrarse</button>
+        </form>
+      </div>
+    
   );
 }
 

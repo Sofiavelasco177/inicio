@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
+
 function ApiResults() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
   
-    fetch('http://www.omdbapi.com/?apikey=tu_api_key')
+    fetch('https://amazon-prime-video-api.p.rapidapi.com')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Error al cargar la API:', error));

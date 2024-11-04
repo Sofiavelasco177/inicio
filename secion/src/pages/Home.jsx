@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './home.css';
+import  Navbar from "../componentes/Navbar"
 
 function Home() {
   const [userName, setUserName] = useState('');
@@ -16,10 +17,11 @@ function Home() {
   return (
     <div className='bienvenida'>
       <section>
-        <h3>Bienvenido, {userName}!</h3>
+        <h3>Bienvenidos{userName}</h3>
         <p> conectado  {userEmail}</p>
         <p>Encuentra lo que mas te gusta en Prime video </p>
       </section>
+      <Navbar></Navbar>
    </div>
   );
 }
